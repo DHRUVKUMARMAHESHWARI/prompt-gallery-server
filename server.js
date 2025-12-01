@@ -40,8 +40,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors(corsOptions));
-// handle preflight requests for all routes
-app.options('*', cors(corsOptions));
+// preflight is handled by cors middleware above, no need for app.options()
 
 // Connect Database
 connectDB();
